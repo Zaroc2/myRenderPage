@@ -1,7 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import PianoKey from './PianoKey'; // o la ruta donde esté
 import './Piano.css'
 
@@ -24,7 +21,11 @@ function Piano({sections}) {
     let octave = 0;
 
     let whiteNotes = 0;
-    for(let i = 0; i < sections.length; i++) {
+
+    let totalSections = Object.keys(sections).length;
+    let sectionName = Object.keys(sections);
+
+    for(let i = 0; i < totalSections; i++) {
 
         //Asignamos el color y la posicion de cada tecla
 
@@ -39,7 +40,6 @@ function Piano({sections}) {
             width = `${BLACK_KEY_WIDTH}px`;
             position = 'absolute';
             top = `${ whiteNotes * (WHITE_KEY_HEIGHT + KEY_GAP) - (BLACK_KEY_HEIGHT/2 + KEY_GAP*whiteNotes)}px`;
-            console.log(i,top,  whiteNotes * (WHITE_KEY_HEIGHT + KEY_GAP) - (BLACK_KEY_HEIGHT/2 + KEY_GAP*whiteNotes));
             left = `${BLACK_KEY_LEFT}px`; // Ajusta este valor según tus necesidades
         }else{
             whiteNotes++;
@@ -70,6 +70,7 @@ function Piano({sections}) {
                         top={top}
                         left={left}
                         isActive={isActive}
+                        href={sectionName[index%totalSections]}
                         onClick={() => {}}
                     />
 

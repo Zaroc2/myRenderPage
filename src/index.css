@@ -1,6 +1,6 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
+  --text: #ffffff;
+  --text-h: #ffffff;
   --bg: #fff;
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
@@ -50,17 +50,20 @@
   }
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
   text-align: center;
   min-height: 100svh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   box-sizing: border-box;
 }
 
