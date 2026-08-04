@@ -1,0 +1,20 @@
+.label{
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.key {
+    position: absolute;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+
+
+.key:hover {
+  transform: scale(1.2); /* Change to your desired hover color */
+  span {
+    opacity: 1;
+  }
+}

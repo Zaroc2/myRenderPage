@@ -22,7 +22,7 @@ const PianoKey = ({ label, color, width, position, top, left, isActive, href, on
                top: top,
                left: left,
                height: height,
-               zIndex: zIndex }}
+               zIndex: zIndex}}
       onClick={onClick}
       whileHover={{ borderColor: borderColor }}
     >
