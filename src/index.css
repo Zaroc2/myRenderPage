@@ -57,6 +57,7 @@ html{
 body {
   margin: 0;
   scroll-behavior: smooth;
+  transition: background-color 0.5s ease-in-out;
 }
 
 #root {

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import PianoKey from './PianoKey'; // o la ruta donde esté
 import './Piano.css'
 
-function Piano({sections}) {
+function Piano({sections, activeSection, OnClick}) {
 
     const WHITE_KEY_WIDTH = 200;
     const BLACK_KEY_WIDTH = WHITE_KEY_WIDTH/2;
@@ -46,7 +46,7 @@ function Piano({sections}) {
             //console.log(i,whiteNotes);
         }
 
-        keys.push({label: mapLetters[i%12], color: color, width: width, position: position, top: top, left: left, isActive: i === indexNote});
+        keys.push({label: mapLetters[i%12], color: color, width: width, position: position, top: top, left: left, isActive: activeSection === sectionName[i]});
     
     }
 
@@ -71,7 +71,7 @@ function Piano({sections}) {
                         left={left}
                         isActive={isActive}
                         href={sectionName[index%totalSections]}
-                        onClick={() => {}}
+                        onClick={() => OnClick(sectionName[index%totalSections])}
                     />
 
                 );
