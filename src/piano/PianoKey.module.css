@@ -10,6 +10,12 @@
     transition: transform 0.2s ease-in-out;
 }
 
+.isActive {
+    transform: scale(1.2);
+    span {
+        opacity: 1;
+    }
+}
 
 
 .key:hover {

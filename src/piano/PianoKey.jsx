@@ -7,14 +7,19 @@ const PianoKey = ({ label, color, width, position, top, left, isActive, href, on
   const WHITE_KEY_HEIGHT = 36;
   const BLACK_KEY_HEIGHT = 20;
 
-  const borderColor = color === 'white' ? 'black' : 'white';
+  let borderColor = color === 'white' ? 'black' : 'white';
   const zIndex = color === 'white' ? 1 : 2; // Asegúrate de que las teclas negras estén por encima de las blancas
   const height = color === 'white' ? `${WHITE_KEY_HEIGHT}px` : `${BLACK_KEY_HEIGHT}px`; // Ajusta la altura según el color de la tecla
+
+  if (isActive) {
+    console.log('La tecla ', label, ' está activa');
+    borderColor = document.body.style.backgroundColor; // Cambia el color del borde si la tecla está activa
+  }
 
   return (
     <a href={`#${href}`}>
       <motion.button
-      className={`${styles.key} ${isActive ? styles.active : ''}`}
+      className={`${styles.key} ${isActive ? styles.isActive : ''}`}
       style={{ backgroundColor: color, 
                color: borderColor, 
                width: width, 
@@ -22,7 +27,8 @@ const PianoKey = ({ label, color, width, position, top, left, isActive, href, on
                top: top,
                left: left,
                height: height,
-               zIndex: zIndex}}
+               zIndex: zIndex,
+               fontWeight: 'bold',}}
       onClick={onClick}
       whileHover={{ borderColor: borderColor }}
     >

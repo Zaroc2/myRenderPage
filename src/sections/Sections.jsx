@@ -12,7 +12,7 @@ function Sections() {
     Object.keys(sections).map((section,index) => {
 
         let Componente = sections[section];
-        console.log(section);
+        //console.log(section);
 
         return(
 
