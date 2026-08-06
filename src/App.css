@@ -1,7 +1,17 @@
 aside{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
-  margin: auto 0;
   position: fixed;
-  top: 25%
 
+}
+
+button#muteButton{
+  background-color: transparent;
+  border: none;
+}
+
+#muteButton{
+  margin: 0 0 26vh 0;
 }
