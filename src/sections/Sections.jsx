@@ -16,7 +16,7 @@ function Sections() {
 
         return(
 
-            <section id={section}>
+            <section id={section} key={section}>
 
                 <Componente key={index} />
 

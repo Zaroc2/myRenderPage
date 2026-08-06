@@ -70,7 +70,7 @@ function Piano({sections, activeSection, OnClick}) {
                         top={top}
                         left={left}
                         isActive={isActive}
-                        href={sectionName[index%totalSections]}
+                        sectionId={sectionName[index%totalSections]}
                         onClick={() => OnClick(sectionName[index%totalSections])}
                     />
 
