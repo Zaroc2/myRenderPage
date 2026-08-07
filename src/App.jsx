@@ -7,6 +7,9 @@ import Piano from './piano/Piano.jsx';
 import Sections from './sections/Sections.jsx'
 import Data from './sections/Data.jsx'
 import { useEffect, useRef } from 'react';
+import { getComplementaryColor } from './Utilities.jsx';
+import { useMediaQuery } from './Utilities.jsx';
+import {motion,AnimatePresence} from 'framer-motion';
 
 const MuteButton = ({bocinaColor,slashColor,muteOn,setMuteOn}) => {
 
@@ -33,19 +36,25 @@ const MuteButton = ({bocinaColor,slashColor,muteOn,setMuteOn}) => {
 
 }
 
-function getComplementaryColor(hex) {
-  // Eliminar el símbolo '#' si está presente
-  hex = hex.replace('#', '');
-  // Convertir el color hexadecimal a valores RGB
-  const r = parseInt(hex.substr(0, 2), 16);
-  const g = parseInt(hex.substr(2, 2), 16);
-  const b = parseInt(hex.substr(4, 2), 16);
-  // Calcular el color complementario (inverso)
-  const complementaryR = 255 - r;
-  const complementaryG = 255 - g;
-  const complementaryB = 255 - b;
-  // Convertir los valores RGB del color complementario a hexadecimal
-  return `#${complementaryR.toString(16).padStart(2, '0')}${complementaryG.toString(16).padStart(2, '0')}${complementaryB.toString(16).padStart(2, '0')}`;
+const MobileMenu = ({color,isOpen,setIsMobileMenuOpen}) => {
+
+  return (
+    <button id="mobileMenuButton" onClick={() => setIsMobileMenuOpen(!isOpen)}>
+      <svg xmlns="http://w3.org" 
+        viewBox="0 0 24 24" 
+        width="100px" 
+        height="100px" 
+        fill="none" 
+        stroke={color} 
+        strokeWidth="2" 
+        strokeLinecap="round" 
+        strokeLinejoin="round">
+        {isOpen ? (
+          <polyline points="9 18 15 12 9 6"></polyline>
+        ) : <polyline points="15 18 9 12 15 6"></polyline>}
+      </svg>
+    </button>
+  )
 }
 
 function App() {
@@ -55,6 +64,8 @@ function App() {
   let [isScrolling, setIsScrolling] = useState(false);
   const muteOnRef = useRef(muteOn);
   const isScrollingRef = useRef(isScrolling);
+  let [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const isMobile = useMediaQuery('(max-width: 1200px)');
 
   useEffect(() => {//Porque en el useEffect de IntersectionObserver, muteOn y isScrolling no se actualizan despues de creado el observer, useRef mantiene el valor actualizado
     muteOnRef.current = muteOn;
@@ -146,14 +157,29 @@ function App() {
   }
   
 
+  console.log(isMobile ? 'Mobile view true' : 'Mobile view false');
 
 
-
+  //AnimatePresence para animar el div en donde estan el mutebutton y el piano
   return (
     <>
       <aside>
-        <MuteButton bocinaColor={getComplementaryColor(coloresSecciones[activeSection])} slashColor={getComplementaryColor(coloresSecciones[activeSection])} muteOn={muteOn} setMuteOn={setMuteOn} />
-        <Piano sections={data} activeSection={activeSection} OnClick={onPianoKeyClick} />
+        <MobileMenu color={getComplementaryColor(coloresSecciones[activeSection])} isOpen={isMobileMenuOpen} setIsMobileMenuOpen={setIsMobileMenuOpen}/>
+        <AnimatePresence>
+          {(!isMobile || isMobileMenuOpen) && (
+              <motion.div
+                key="transicionMenu"
+                initial={{ x: -200 }}
+                animate={{ x: 0 }}
+                exit={{ x: -200 }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+              >
+                <MuteButton bocinaColor={getComplementaryColor(coloresSecciones[activeSection])} slashColor={getComplementaryColor(coloresSecciones[activeSection])} muteOn={muteOn} setMuteOn={setMuteOn} />
+                <Piano sections={data} activeSection={activeSection} OnClick={onPianoKeyClick} />
+              </motion.div>
+            )
+          }
+        </AnimatePresence>
       </aside>
       <main>
         <Sections/>

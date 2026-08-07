@@ -6,3 +6,14 @@
     position: relative;
 
 }
+
+@media (max-width: 1200px) {
+    #piano{
+        opacity: 0.8;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    #piano:active{
+        opacity: 1;
+    }
+}

@@ -7,11 +7,25 @@ aside{
 
 }
 
-button#muteButton{
+#muteButton{
+  margin: 0 0 26vh 0;
   background-color: transparent;
   border: none;
 }
 
-#muteButton{
-  margin: 0 0 26vh 0;
+#mobileMenuButton{
+  display: none;
+  background-color: transparent;
+  border: none;
+  opacity: 0.8;
+}
+
+@media (max-width: 1200px) {
+  #mobileMenuButton{
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
 }
