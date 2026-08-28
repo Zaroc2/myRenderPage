@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import PianoKey from './PianoKey'; // o la ruta donde esté
 import './Piano.css'
+import { displayPianoNames } from '../sections/Data';
 
 function Piano({sections, activeSection, OnClick}) {
 
@@ -70,7 +71,7 @@ function Piano({sections, activeSection, OnClick}) {
                         top={top}
                         left={left}
                         isActive={isActive}
-                        sectionId={sectionName[index%totalSections]}
+                        sectionId={displayPianoNames[sectionName[index%totalSections]]} //DisplayPianoNames para una clave de SectionName da el nombre, que es dependiendo del indice
                         onClick={() => OnClick(sectionName[index%totalSections])}
                     />
 

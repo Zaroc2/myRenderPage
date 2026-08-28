@@ -20,7 +20,7 @@ aside{
   opacity: 0.8;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1690px) {
   #mobileMenuButton{
     display: block;
     position: fixed;
