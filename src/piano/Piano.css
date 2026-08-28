@@ -7,7 +7,7 @@
 
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1690px) {
     #piano{
         opacity: 0.8;
         transition: opacity 0.3s ease-in-out;

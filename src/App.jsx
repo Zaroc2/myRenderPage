@@ -14,7 +14,7 @@ import {motion,AnimatePresence} from 'framer-motion';
 const MuteButton = ({bocinaColor,slashColor,muteOn,setMuteOn}) => {
 
   return (
-    <button id="muteButton" onClick={() => {setMuteOn(!muteOn)}}>
+    <button id="muteButton" onClick={() => {setMuteOn(!muteOn)}} aria-label={muteOn ? "Unmute sound" : "Mute sound"}>
       <svg 
         fill="none" 
         width="70px" 
@@ -39,7 +39,7 @@ const MuteButton = ({bocinaColor,slashColor,muteOn,setMuteOn}) => {
 const MobileMenu = ({color,isOpen,setIsMobileMenuOpen}) => {
 
   return (
-    <button id="mobileMenuButton" onClick={() => setIsMobileMenuOpen(!isOpen)}>
+    <button id="mobileMenuButton" onClick={() => setIsMobileMenuOpen(!isOpen)} aria-label={isOpen ? "Open Menu" : "Close menu"}>
       <svg xmlns="http://w3.org" 
         viewBox="0 0 24 24" 
         width="100px" 
@@ -65,7 +65,7 @@ function App() {
   const muteOnRef = useRef(muteOn);
   const isScrollingRef = useRef(isScrolling);
   let [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const isMobile = useMediaQuery('(max-width: 1200px)');
+  const isMobile = useMediaQuery('(max-width: 1690px)');
 
   useEffect(() => {//Porque en el useEffect de IntersectionObserver, muteOn y isScrolling no se actualizan despues de creado el observer, useRef mantiene el valor actualizado
     muteOnRef.current = muteOn;
@@ -75,11 +75,11 @@ function App() {
     isScrollingRef.current = isScrolling;
   }, [isScrolling]);
 
-  let coloresSecciones = {home: '#000000', programming: '#7a4040', music: '#1d521d',
-                   fillerData1: '#581858', fillerData2: '#3a3a21', fillerData3: '#3c4e4e',
-                   fillerData4: '#1a1a3d', fillerData5: '#302222', fillerData6: '#3b2828',
-                   fillerData7: '#3a2525', fillerData8: '#2b442b', fillerData9: '#000080',
-                   fillerData10: '#4b0082'};
+  let coloresSecciones = {home: '#000000', programming: '#7a4040', projectsReactAndBot: '#1d521d',
+                   projectsCPlusPlus: '#581858', languages: '#3a3a21', music: '#3c4e4e',
+                   workPhilosophyAndEthics: '#1a1a3d', learningRightNow: '#302222', futureGoals: '#3b2828',
+                   contact: '#3a2525', quotes: '#2b442b', booksAndEntertainment: '#000080',
+                   thanks: '#4b0082'};
                           
 
   let data = Data();
@@ -182,7 +182,7 @@ function App() {
         </AnimatePresence>
       </aside>
       <main>
-        <Sections/>
+        <Sections isVisible={activeSection}/>
       </main>
     </>
   )
