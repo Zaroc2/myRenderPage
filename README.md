@@ -38,5 +38,5 @@ src/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Zaroc2/proyecto-ATI.git
-   cd proyecto-ATI
+   git clone https://github.com/Zaroc2/myRenderPage
+   cd myRenderPage
