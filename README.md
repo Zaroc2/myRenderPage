@@ -1,16 +1,42 @@
-# React + Vite
+# My personal portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+It's a website that uses a vertical piano as a navigation bar. Each key represents a section of the portfolio (home, skills, projects, music, etc.). Clicking a key or scrolling navigates to the corresponding section, the background color changes smoothly, and a sound plays (if not muted)
 
-Currently, two official plugins are available:
+It's made with React, Vite, Framer Motion, IntersectionObservers and Web Audio API
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+ext
 
-## React Compiler
+src/
+├── App.jsx                # Main component (global state, observer, navigation logic)
+├── App.css                # Main layout styles
+├── index.css              # Global styles (variables, reset, scroll-behavior)
+├── main.jsx               # Entry point
+├── Utilities.jsx          # Helper functions (getComplementaryColor, useMediaQuery)
+│
+├── piano/                 # Piano components
+│   ├── Piano.jsx          # Generates keys (white and black) based on sections
+│   ├── PianoKey.jsx       # Individual key with Framer Motion animations
+│   ├── PianoKey.module.css # Key styles (hover, active, isActive)
+│   └── Piano.css          # Piano container styles
+│
+├── sections/              # Portfolio sections
+│   ├── Data.jsx           # Defines all sections (components and structure)
+│   ├── Sections.jsx       # Renders all sections
+│   └── sections.css       # Section-specific styles
+│
+├── components/ 
+│   └── Layout/
+│
+└── assets/                # Images, icons, etc.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Prerequisites
 
-## Expanding the Oxlint configuration
+- **Node.js** (v18 or higher)
+- **npm** or **yarn**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Zaroc2/proyecto-ATI.git
+   cd proyecto-ATI
