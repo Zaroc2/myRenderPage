@@ -530,8 +530,8 @@ const Quotes = ({isVisible}) => {
                 transition={{ duration: 0.3, ease: "easeInOut" }}
             >
                 <p id="quotesIntro">
-                    These are some quotes that I like, I wouldn't say the define or anything, but I like them.
-                    <sub>(And to come clean with you... I needed 12 sections for the piano to look good)</sub>
+                    These are some quotes that I like, I wouldn't say the define or anything, but I like them. 
+                    <sub> (And to come clean with you... I needed 12 sections for the piano to look good)</sub>
                 </p>
                 <div id="quotesGrid">
                     <div className="quoteCard" id='MM'>
@@ -651,9 +651,9 @@ const BooksAndEntertainment = ({isVisible}) => {
                         When it comes to music, I do have a <strong>1800+ songs</strong> playlist with a lot... of variety, but as of right now 
                         I'm really rediscovering and enjoying the <strong><em>Out of The Blue</em></strong> album by <em>Electric Ligth Orchestra</em>, a fantastic piece of work.
                     </p>
-                    <iframe data-testid="embed-iframe" style={{borderRadius: '12px'}} 
+                    <iframe data-testid="embed-iframe" style={{borderRadius: '12px', overflow: 'hidden'}} 
                     src="https://open.spotify.com/embed/album/3usnShwygMXVZB4IV5dwnU?utm_source=generator&si=69f51eb975d4449a" 
-                    width="60%" height={isMobile ? '200' : '150'} frameBorder="0" allowFullScreen allow="autoplay; clipboard-write; encrypted-media; 
+                    width={isMobile ? '80%' : '100%'} height={isMobile ? '80' : '352'} frameBorder="0" allowFullScreen allow="autoplay; clipboard-write; encrypted-media; 
                     fullscreen; picture-in-picture" loading="lazy" title="Spotify player for Out of the Blue album by Electric Light Orchestra"></iframe>
                     <p>If you wanna give it a go ;)</p>
                 </div>

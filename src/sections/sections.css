@@ -6,6 +6,10 @@
 
 /*HOME*/
 
+main #home{
+    margin: auto;
+}
+
 #home{
     h1{
         line-height: 1.1em;
@@ -19,6 +23,10 @@
     width: 60%;
 }
 
+main #programming {
+    margin: auto;
+}
+
 #programming li{
     background-color: rgb(87, 46, 46);
     margin: 3%;
@@ -30,6 +38,7 @@
     list-style-type: none;
     width: 80%;
     justify-self: center;
+    margin: auto;
 }
 
 /*PROJECTSREACTANDBOT*/
@@ -84,7 +93,7 @@ a{
 #ProjectsCPlusPlus{
     ul{
         padding: 0%;
-        margin: 0%;
+        margin: auto;
         list-style-type: none;
         width: 87%;
         justify-self: center;
@@ -176,6 +185,9 @@ a{
 #languageList{
     justify-self: center;
     text-align: left;
+    padding: auto;
+    width: fit-content;
+    margin: auto;
     background-color: rgb(32, 32, 19);
     padding: 1%;
     border-radius: 5% / 10%;
@@ -189,7 +201,7 @@ a{
         width: 70%;
         background-color: rgb(35, 46, 46);
         padding: 2%;
-        margin: 1%; 
+        margin: 1% auto;
     }
     h2{
         margin-left: 15%;
@@ -219,8 +231,9 @@ a{
     grid-column-start: 1;
     grid-column-end: 4;
     width: 50%;
-
+    margin: auto;
     p{
+        margin: auto;
         padding: 5% 5%;
         border-radius: 5% / 20%;
         justify-self: center;
@@ -289,15 +302,19 @@ a{
 #learningIntro{
     grid-column-start: 1;
     grid-column-end: 4;
+    justify-content: center;
+    margin: auto;
     p{
         width: 55%;
         justify-self: center;
+        margin: 2% auto;
+
         border-radius: 5% / 30%;
     }
 }
 
 #learningLocution{
-
+    margin: auto;
     p{
         border-radius: 5% / 10%;
     }
@@ -307,14 +324,14 @@ a{
 }
 
 #learningHistory{
-
+    margin: auto;
     p{
         border-radius: 10%;
     }
 }
 
 #learningMagic{
-
+    margin: auto;
     p{
         border-radius: 5% / 15%;
     }
@@ -333,7 +350,7 @@ a{
         background-color: rgb(31, 21, 21);
         padding: 2%;
         border-radius: 5% / 15%;
-        margin: 2%;
+        margin:  2% auto;
     }
 }
 
@@ -346,7 +363,7 @@ a{
     }
     li{
         text-align: left;
-        margin: 2%;
+        margin: 2% auto;
         background-color: rgb(31, 19, 19);
         padding: 2%;
         border-radius: 5% / 50%;
@@ -369,10 +386,12 @@ a{
 #quotes{
     width: 94%;
     justify-self: center;
+    margin: auto;
 }
 
 #quotesIntro{
     width: 45%;
+    margin: auto;
     justify-self: center;
     margin-bottom: 2%;
     background-color: rgb(25, 39, 25);
@@ -440,28 +459,29 @@ a{
 #booksAndEntertainment{
     width: 75%;
     justify-self: center;
+    margin: auto;
 }
 
 #entertainmentIntro{
     width: 80%;
     justify-self: center;
-
+    margin: 2% auto;
     img{
         border-radius: 10%;
+        margin: 0% auto;
     }
-
-    margin: 2%;
 }
 
 #entertainmentIntro p:first-child{
     background-color: rgb(1, 1, 88);
     padding: 2%;
-    margin: 2%;
+    margin: 2% auto;
     border-radius: 5% / 10%;
     text-align: left;
 }
 
 #entertainmentBooks{
+    margin: auto;
     width: 75%;
     justify-self: center;
     display: flex;
@@ -471,7 +491,7 @@ a{
     width: 75%;
     background-color: rgb(1, 1, 88);
     padding: 2%;
-    margin: 2%;
+    margin: 2% auto;
     border-radius: 5% / 10%;
     text-align: left;
 }
@@ -495,14 +515,19 @@ a{
 #entertainmentMusic p:first-child{
     background-color: rgb(1, 1, 88);
     padding: 2%;
-    margin: 2%;
+    margin: 2% auto;
     border-radius: 5% / 10%;
     text-align: justify;
     width: 80%;
     justify-self: center;
+}
+
+#entertainmentMusic{
+    
+    padding-bottom: 0%;
+    margin-bottom: 0%;
+    border-bottom: 0%;
     iframe{
-        height: fit-content;
-        background-color: #123112;
     }
 }
 
